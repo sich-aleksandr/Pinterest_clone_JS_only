@@ -1,0 +1,106 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    padding: 4px 16px;
+    background: white;
+
+    &__logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border: 10px solid transparent;
+        
+        &:hover {
+            @include icon-hover;
+        }
+
+        &.logo__anchor {
+            width: 100%;
+            height: 100%;
+            border: 10px solid transparent;
+            background: url(../img/logo-icon.svg) no-repeat center;
+        }
+    }
+
+    &__input-container {
+        position: relative;
+        flex-grow: 1;
+        
+        & .header__search {
+            width: 95%;
+            padding: 15px 30px 15px 40px;
+            @include font-stack;
+            background: rgb(239,239,239);
+            border: 5px solid transparent;
+            border-radius: 50px;
+
+            &:hover {
+                background: rgb(214, 209, 209);
+            }
+
+            &:focus {
+                border: 5px solid rgb(92, 143, 226);
+            }
+
+            &::placeholder {
+                @include font-stack;
+                color: rgb(117,136,136);
+            }
+        }
+
+        & .header__search-icon {
+            position: absolute;
+            top: 23px;
+            left: 15px;
+            width: 18px;
+            height: 24px;
+            background: url(../img/search-icon.svg);
+
+            &:hover {
+                cursor: pointer;
+            }
+        }    
+    }
+
+    &__notifications-container,
+    &__chat-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        
+        &:hover {
+            background: rgb(239,239,239);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+    
+    &__user-container,
+    &__select-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        
+        &:hover {
+            background: rgb(239,239,239);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        &.header__user-container_size {
+            width: 60px;
+            height: 60px;
+            padding: 10px;
+        }
+    }
+}
