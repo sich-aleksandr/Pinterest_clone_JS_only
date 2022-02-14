@@ -9,29 +9,33 @@
         border-radius: 50%;
         background-color: #FFFFFF;
     }
+    &__modal {
+        box-shadow: 2px 2px 2px rgb(216, 216, 216);
+        display: none;
+        flex-direction: column;
+        border-radius: 20px;
+        padding-top: 10px;
+        position: relative;
+        width: 350px;
+        background-color: #FFFFFF;
+        .modal__list {
+            margin: 5px;
+            padding: 0px;
+        }
+        .modal__list li {
+            list-style-type: none;
+            font-weight: 700;
+            padding: 5px 10px 5px 10px;
+        }
+        .modal__list li:hover {
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: rgb(216, 216, 216);
+        }
+    }
+    &__modal p {
+        margin: 0px;
+        padding: 15px;
+    }
 }
 
-.modal {
-    box-shadow: 2px 2px 2px rgb(238, 238, 238);
-    display: none;
-    flex-direction: column;
-    border-radius: 20px;
-    padding-top: 10px;
-    position: relative;
-    width: 350px;
-    background-color: #FFFFFF;
-}
-.modal p {
-    padding: 15px;
-}
-
-.modal__list li {
-    margin: 0px 10px 0px 10px;
-    font-weight: 700;
-    padding: 5px 15px 5px 15px;
-}
-
-li:hover {
-    border-radius: 10px;
-    background-color: rgb(247, 246, 246);
-}
