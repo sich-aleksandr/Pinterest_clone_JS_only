@@ -1,6 +1,6 @@
 function getLocalData(key) {
   let data = JSON.parse(localStorage.getItem(key));
-  return (data ??= []);
+  return data ??= [];
 }
 
 function setLocalData(key, data) {
