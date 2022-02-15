@@ -30,45 +30,82 @@
         }
     }
 
-    &__input-container {
+    &__search-container {
         position: relative;
         display: flex;
         flex: 1 1 auto;
         
-        & .header__search {
+        .header__search {
             width: 100%;
-            padding: 15px 0px 15px 50px;
+            padding: 15px 60px 15px 50px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
             @include font-stack;
             background: rgb(239,239,239);
-            border: 5px solid transparent;
+            border: 4px solid transparent;
             border-radius: 50px;
+            
+            &::placeholder {
+                @include font-stack;
+                color: rgb(117,136,136);
+            }
 
             &:hover {
                 background: rgb(214, 209, 209);
             }
 
-            &:focus {
-                border: 5px solid rgb(92, 143, 226);
+            &:valid {
+                padding-left: 25px;
             }
 
-            &::placeholder {
-                @include font-stack;
-                color: rgb(117,136,136);
+            &:focus {
+                padding-left: 25px;
+                border: 4px solid rgb(92, 143, 226);
+            }
+
+            &-icon {
+                position: absolute;
+                top: 24px;
+                left: 15px;
+                width: 18px;
+                height: 24px;
+                background: url(../img/search-icon.svg);
+    
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            
+            &-button {
+                position: absolute;
+                right: 3px;
+                bottom: 4px;
+                display: none;
+                width: 60px;
+                height: 60px;
+                background: url(../img/remove-button.svg) no-repeat center;
+                border: 15px solid transparent;
+                border-radius: 50%;
+
+                &:hover {
+                    border-color: rgb(214, 209, 209);
+                }
+            }
+
+            &:valid ~ .header__search-button {
+                display: block;
+            }
+
+            &:focus + .header__search-icon,
+            &:valid + .header__search-icon {
+                display: none;
+            }
+
+            &:valid + .header__search-icon {
+                display: none;
             }
         }
-
-        & .header__search-icon {
-            position: absolute;
-            top: 24px;
-            left: 15px;
-            width: 18px;
-            height: 24px;
-            background: url(../img/search-icon.svg);
-
-            &:hover {
-                cursor: pointer;
-            }
-        }    
     }
 
     &__notifications-container,
