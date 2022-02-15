@@ -1,0 +1,46 @@
+.root {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    &__button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+    }
+    &__modal {
+        box-shadow: 2px 2px 2px rgb(216, 216, 216);
+        display: none;
+        flex-direction: column;
+        border-radius: 20px;
+        padding-top: 10px;
+        position: relative;
+        width: 350px;
+        background-color: #FFFFFF;
+        .modal__list {
+            margin: 5px;
+            padding: 0px;
+        }
+        .modal__list li {
+            cursor: pointer;
+            list-style-type: none;
+            font-weight: 700;
+            padding: 5px 10px 5px 10px;
+        }
+        .modal__list li a {
+            display: block;
+            text-decoration: none;
+            color: black;
+        }
+        .modal__list li:hover {
+            border-radius: 10px;
+            background-color: rgb(216, 216, 216);
+        }
+    }
+    &__modal p {
+        margin: 0px;
+        padding: 15px;
+    }
+}
+
