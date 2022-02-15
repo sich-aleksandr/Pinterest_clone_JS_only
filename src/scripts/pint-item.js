@@ -1,6 +1,6 @@
 // Logic For one Pint Item
 
-function RenderOnePint({}) {
+function Pint({}) {
     this.root = null;
     this.id = null;
 }
