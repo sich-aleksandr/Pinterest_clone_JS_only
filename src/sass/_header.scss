@@ -8,7 +8,7 @@
     gap: 10px;
     height: 120px;
     padding: 4px 16px;
-    background: white;
+    background: #fff;
 
     &__logo-container {
         display: flex;
@@ -17,7 +17,7 @@
         width: 60px;
         height: 60px;
         border: 10px solid transparent;
-        
+        box-sizing: content-box;
         &:hover {
             @include icon-hover;
         }
@@ -136,7 +136,7 @@
             cursor: pointer;
         }
 
-        &.header__user-container_size {
+        &.header__user-container-size {
             min-width: 60px;
             height: 60px;
             padding: 10px;
