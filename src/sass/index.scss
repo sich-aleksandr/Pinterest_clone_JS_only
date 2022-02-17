@@ -1,3 +1,51 @@
-@import '_reset';
-@import '_mixines';
-@import '_header';
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+}
+
+.card__image {
+    display: flex;
+    background-image: url(https://img1.fonwall.ru/o/ff/sea-planet-artist-artwork.jpeg);
+    border-radius: 25px;
+    height: 250px;
+    width: 175px;
+    border: 1px black solid;
+    align-items: flex-end;
+}
+
+.card__menu-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px transparent solid;
+    opacity: .3;
+    margin-left: 130px;
+    margin-bottom: 11px;
+    
+}
+
+.card__description {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 15px;
+}
+
+.card__avatar {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px black solid;
+}
+
+
+.card__text{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 10px;
+}
+
+
