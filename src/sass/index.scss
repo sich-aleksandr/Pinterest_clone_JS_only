@@ -1,51 +1,116 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    width: 180px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 176px;
+  margin: 8px;
+  border-radius: 25px;
+ 
+  &:hover {
+    .card__description {
+      opacity: 1;
+      transition: 0.5s;
+      margin-left: 1px;
+      margin-top: 10px;
+    }
+  }
+  &:hover {
+    .card__image-board {
+      box-shadow: 0 0 12px 2px;
+      height: 255px;
+      width: 180px;
+      transition: 0.3s;
+    }
+  }
 }
 
-.card__image {
+.card__image-board {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  height: 250px;
+  width: 175px;
+  align-items: flex-end;
+  border-radius: 25px;
+  background-image: url(../img/card-images/girl.jpg);
+  background-size: cover;
+  box-shadow: 0 0 8px 0px;
+  &:not(:hover) {
     display: flex;
-    background-image: url(https://img1.fonwall.ru/o/ff/sea-planet-artist-artwork.jpeg);
-    border-radius: 25px;
+    position: relative;
     height: 250px;
     width: 175px;
-    border: 1px black solid;
-    align-items: flex-end;
-}
+    box-shadow: 0 0 8px 0px;
+    transition: 0.3s;
+    .card__menu-button {
+        display: none;
+      }
+  }
 
-.card__menu-button {
+  .card__menu-button {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    display: inline;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 1px transparent solid;
-    opacity: .3;
-    margin-left: 130px;
-    margin-bottom: 11px;
-    
+    opacity: 0.4;
+    margin-left: 135px;
+    margin-bottom: 9px;
+    &:hover {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      font-size: 12px;
+      transition: 0.1s;
+      background: linear-gradient(rgb(118, 224, 30), gold, rgb(118, 224, 30));
+      box-shadow: 0 0 4px 3px;
+      animation: background 9s infinite alternate;
+      opacity: 0.9;
+      @keyframes background {
+        100% {
+          background-position: 0 200px;
+        }
+      }
+    }
+  }
 }
 
 .card__description {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    margin-right: 0px;
-    margin-left: 15px;
-}
-
-.card__avatar {
-    display: flex;
-    flex-direction: row;
-    height: 40px;
-    width: 40px;
+  display: flex;
+  flex-direction: row;
+  margin-top: -40px;
+  width: 175px;
+  background-color: beige;
+  border-radius: 15px;
+  box-shadow: 2px -8px 10px -2px beige;
+  opacity: 0;
+  box-shadow: 2px 0 5px 2px beige;
+  &:not(:hover) {
+    opacity: 0;
+    transition: 0.5s;
+    margin-top: -40px;
+  }
+  .card__avatar {
+    flex: none;
+    overflow: auto;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
-    border: 1px black solid;
-}
-
-
-.card__text{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-size: cover;
+    background-image: url(../img/card-avatars/fox-avatar.jpg);
     margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 7px;
+  }
+  .card__text {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 7px;
+  }
 }
-
-
