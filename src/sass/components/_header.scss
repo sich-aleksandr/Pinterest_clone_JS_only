@@ -107,7 +107,11 @@
             }
         }
     }
-
+    &__notifications,
+    &__chat {
+    width: 60px;
+    height: 60px;
+    }
     &__notifications-container,
     &__chat-container {
         display: flex;

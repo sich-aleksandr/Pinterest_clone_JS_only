@@ -1,4 +1,5 @@
-@import '_reset';
-@import '_mixines';
-@import '_header';
-@import '_modal'
+@import '../sass/config/reset';
+@import '../sass/config/mixins';
+@import '../sass/config/global-styles';
+@import '../sass/components/header';
+@import '../sass/components/modal'
