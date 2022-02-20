@@ -10,7 +10,6 @@ function Modal(root) {
   });
   this.open = function () {
     this.root.style.display = "flex";
-    console.log("123");
   };
   this.close = function () {
     this.root.style.display = "none";
