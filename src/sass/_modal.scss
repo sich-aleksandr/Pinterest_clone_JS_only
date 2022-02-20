@@ -10,6 +10,7 @@
   &__header {
     margin: 0px;
     padding: 15px;
+    font-weight: 700;
   }
   &__list {
     margin: 5px;
@@ -18,10 +19,9 @@
   &__list li {
     cursor: pointer;
     list-style-type: none;
-    font-weight: 700;
     padding: 5px 10px 5px 10px;
   }
-  &__list li a {
+  &__list-link {
     display: block;
     text-decoration: none;
     color: black;
