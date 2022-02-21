@@ -1,5 +1,10 @@
-import { Modal } from "./Modal.js"
+import { menu } from "./Menu.js"
 
-const modal = new Modal(document.querySelector('.modal'))
-
-
+const btnOpenMenu = document.querySelector("#show-menu");
+const closeMenu = document.querySelector(".menu");
+btnOpenMenu.addEventListener("click", () => {
+    menu.open();
+    });
+closeMenu.addEventListener("click", () => {
+    menu.close();
+    });
