@@ -1,0 +1,11 @@
+@mixin font-stack {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 25px;
+}
+@mixin icon-hover {
+    border-radius: 50%;
+    border: 10px solid rgb(239,239,239);
+    cursor: pointer;
+}

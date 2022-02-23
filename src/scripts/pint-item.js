@@ -4,3 +4,4 @@ function Pint({}) {
     this.root = null;
     this.id = null;
 }
+
