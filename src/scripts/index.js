@@ -1,5 +1,5 @@
-import { menu } from "./Menu.js"
-import { modalСomplaint, modalAddDesk } from "./Modal.js"
+import { menu } from "./components/Menu.js"
+import { modalСomplaint, modalAddDesk } from "./components/Modal.js"
 
 const btnOpenMenu = document.querySelector("#add-button");
 const closeMenu = document.querySelector(".menu");
