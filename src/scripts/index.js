@@ -4,7 +4,8 @@ import { modalСomplaint, modalAddDesk } from "./components/Modal.js"
 const btnOpenMenu = document.querySelector("#add-button");
 const closeMenu = document.querySelector(".menu");
 btnOpenMenu.addEventListener("click", () => {
-    menu.open();
+    menu.open(btnOpenMenu.getBoundingClientRect().left,  btnOpenMenu.getBoundingClientRect().top);
+    
 });
 closeMenu.addEventListener("click", () => {
     menu.close();
@@ -19,3 +20,6 @@ const btnModalСomplaint = document.querySelector("#btn-modal-complaint");
 btnModalСomplaint.addEventListener('click', () => {
     modalСomplaint.open()
 })
+
+
+

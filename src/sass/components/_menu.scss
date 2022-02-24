@@ -3,9 +3,11 @@
   display: none;
   flex-direction: column;
   border-radius: 20px;
-  padding-top: 10px;
-  position: relative;
-  width: 350px;
+ 
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
   background-color: #ffffff;
   &__header {
     margin: 0px;
