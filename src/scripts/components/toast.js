@@ -51,4 +51,4 @@ function createElement(tag, className, text = "") {
   return element;
 }
 
-export { startToast, Toast };
+export { Toast };

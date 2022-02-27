@@ -1,8 +1,7 @@
 import { menu } from "./components/Menu.js"
 import { modalСomplaint, modalAddDesk } from "./components/Modal.js"
-import { startToast, Toast } from "./components/toast.js"
+import { Toast } from "./components/toast.js"
 
-// startToast();
 new Toast().start()
 
 
