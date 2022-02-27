@@ -1,17 +1,21 @@
-function startToast() {
-  return new Promise(function (resolve) {
-    setTimeout(() => resolve(new Toast()), 15000);
-  }).then(function (toast) {
-    setTimeout(() => toast.close(), 5000);
-  });
-}
-
 function Toast(options) {
   this.root = createToast();
   const closeBtn = document.querySelector("#toast-close");
   closeBtn.addEventListener("click", () => {
     this.close();
   });
+  this.start = function () {
+    new Promise((resolve) => {
+      setTimeout(() => resolve(this.open()), 15000);
+    }).then((resolve) => {
+      setTimeout(() => {
+        this.close();
+      }, 5000);
+    });
+  };
+  this.open = function () {
+    this.root.style.display = "flex";
+  };
   this.close = function () {
     this.root.style.display = "none";
   };
@@ -47,4 +51,4 @@ function createElement(tag, className, text = "") {
   return element;
 }
 
-export { startToast };
+export { startToast, Toast };

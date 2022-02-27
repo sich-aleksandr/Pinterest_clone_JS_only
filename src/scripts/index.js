@@ -1,8 +1,10 @@
 import { menu } from "./components/Menu.js"
 import { modalСomplaint, modalAddDesk } from "./components/Modal.js"
-import { startToast } from "./components/toast.js"
+import { startToast, Toast } from "./components/toast.js"
 
-startToast();
+// startToast();
+new Toast().start()
+
 
 const btnOpenMenu = document.querySelector("#add-button");
 const closeMenu = document.querySelector(".menu");
