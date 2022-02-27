@@ -1,5 +1,8 @@
 import { menu } from "./components/Menu.js"
 import { modalСomplaint, modalAddDesk } from "./components/Modal.js"
+import { startToast } from "./components/toast.js"
+
+startToast();
 
 const btnOpenMenu = document.querySelector("#add-button");
 const closeMenu = document.querySelector(".menu");
@@ -20,6 +23,7 @@ const btnModalСomplaint = document.querySelector("#btn-modal-complaint");
 btnModalСomplaint.addEventListener('click', () => {
     modalСomplaint.open()
 })
+
 
 
 

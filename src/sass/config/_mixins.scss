@@ -9,3 +9,14 @@
     border: 10px solid rgb(239,239,239);
     cursor: pointer;
 }
+@mixin flex-c-c-s {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+@mixin flex-c-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
