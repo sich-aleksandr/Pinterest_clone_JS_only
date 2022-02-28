@@ -2,6 +2,7 @@ import { menu } from "./components/Menu.js"
 import { modalСomplaint, modalAddDesk } from "./components/Modal.js"
 import { pint } from "./components/pint-item.js";
 
+console.log(pint)
 
 const btnOpenMenu = document.querySelector("#add-button");
 const closeMenu = document.querySelector(".menu");
