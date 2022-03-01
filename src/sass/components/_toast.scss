@@ -1,13 +1,17 @@
 .toast-wrapper {
   position: fixed;
-  display: none;
+  display: flex;
   justify-content: space-around;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(194, 115, 115, 0.3);
   z-index: 2;
+  transform: translateX(4000px);
+}
+.open-toast {
+  transform: translateX(0px);
 }
 .toast {
   @include flex-c-c-s;
@@ -15,6 +19,11 @@
   height: 150px;
   border-radius: 5px;
   background: #fff;
+  &__text {
+    font-weight: 700;
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
   &__heading {
     width: 100%;
     display: flex;
@@ -36,11 +45,5 @@
         opacity: 1;
       }
     }
-  }
-
-  &__text {
-    font-weight: 700;
-    font-size: 18px;
-    padding-bottom: 20px;
   }
 }

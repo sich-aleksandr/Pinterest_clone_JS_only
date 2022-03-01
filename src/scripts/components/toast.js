@@ -1,3 +1,5 @@
+import { createElement } from "../utils/utils.js"
+
 function Toast(options) {
   this.root = createToast();
   const closeBtn = document.querySelector("#toast-close");
@@ -6,18 +8,21 @@ function Toast(options) {
   });
   this.start = function () {
     new Promise((resolve) => {
-      setTimeout(() => resolve(this.open()), 15000);
-    }).then((resolve) => {
+      setTimeout(() => {
+        this.open();
+        resolve();
+      }, 15000);
+    }).then(() => {
       setTimeout(() => {
         this.close();
       }, 5000);
     });
   };
   this.open = function () {
-    this.root.style.display = "flex";
+    this.root.classList.add('open-toast');
   };
   this.close = function () {
-    this.root.style.display = "none";
+    this.root.classList.remove('open-toast');
   };
 }
 
@@ -39,16 +44,6 @@ function createToast() {
   toast.append(toastModal);
   document.body.appendChild(toast);
   return toast;
-}
-
-// Utils
-
-function createElement(tag, className, text = "") {
-  const element = document.createElement(tag);
-  const textElement = document.createTextNode(text);
-  element.className = className;
-  element.append(textElement);
-  return element;
 }
 
 export { Toast };
