@@ -1,10 +1,11 @@
 import { createElement } from "../utils/utils.js"
 
 function Toast(options) {
-  this.root = createToast();
-this.root.querySelector("#toast-close").addEventListener("click", () => {
-    this.close();
-  });
+  this.init = function () {
+    this.root = createToast();
+    this.root.addEventListener("click", this.handleToast);
+    this.start();
+  };
   this.start = function () {
     new Promise((resolve) => {
       setTimeout(() => {
@@ -17,11 +18,16 @@ this.root.querySelector("#toast-close").addEventListener("click", () => {
       }, 2000);
     });
   };
+  this.handleToast = (event) => {
+    if (event.target.type == "button") {
+      this.close();
+    }
+  };
   this.open = function () {
-    this.root.classList.add('open-toast');
+    this.root.classList.add("open-toast");
   };
   this.close = function () {
-    this.root.classList.remove('open-toast');
+    this.root.classList.remove("open-toast");
   };
 }
 
@@ -30,7 +36,7 @@ function createToast() {
   const toastModal = createElement("div", "toast");
   const toastHeader = createElement("div", "toast__heading");
   const toastTitle = createElement("h3", "toast__heading-title", "Ку!");
-  const toastBtn = createElement("button", "toast__heading-closebtn", "X");
+  const toastBtn = createElement("button", "toast__heading-btn--close", "X");
   toastBtn.type = "button";
   toastBtn.id = "toast-close";
   const toastPragraf = createElement(
@@ -45,4 +51,6 @@ function createToast() {
   return toast;
 }
 
-export { Toast };
+const toast = new Toast().init();
+
+export { toast };
