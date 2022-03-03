@@ -2,8 +2,7 @@ import { createElement } from "../utils/utils.js"
 
 function Toast(options) {
   this.root = createToast();
-  const closeBtn = document.querySelector("#toast-close");
-  closeBtn.addEventListener("click", () => {
+this.root.querySelector("#toast-close").addEventListener("click", () => {
     this.close();
   });
   this.start = function () {
@@ -11,11 +10,11 @@ function Toast(options) {
       setTimeout(() => {
         this.open();
         resolve();
-      }, 15000);
+      }, 3000);
     }).then(() => {
       setTimeout(() => {
         this.close();
-      }, 5000);
+      }, 2000);
     });
   };
   this.open = function () {
