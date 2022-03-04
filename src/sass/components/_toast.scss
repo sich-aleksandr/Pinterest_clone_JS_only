@@ -8,10 +8,11 @@
   height: 100%;
   background-color: rgba(194, 115, 115, 0.3);
   z-index: 2;
-  transform: translateX(4000px);
+  transform: translateY(-110%);
+  transition: all 0.5s ease;
 }
 .open-toast {
-  transform: translateX(0px);
+  transform: translateY(0px);
 }
 .toast {
   @include flex-c-c-s;
@@ -33,7 +34,7 @@
       font-size: 25px;
       padding: 20px;
     }
-    &-closebtn {
+    &-btn--close {
       font-size: 24px;
       font-weight: 700;
       color: #000;
