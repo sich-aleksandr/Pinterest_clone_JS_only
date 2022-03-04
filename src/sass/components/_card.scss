@@ -9,9 +9,9 @@ $card-large: 26;
   margin: 0;
   padding: 0;
   width: 95vw;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  // position: absolute;
+  // left: 50%;
+  // transform: translateX(-50%);
 
   display: grid;
   grid-template-columns: repeat(auto-fill, $card-width);
@@ -61,7 +61,7 @@ $card-large: 26;
     width: 150px;
     align-items: flex-end;
     border-radius: 25px;
-    background-image: url(../accest/images/girl.jpg);
+    background-image: url(../assets/images/girl.jpg);
     background-size: cover;
     box-shadow: 0 0 8px 0px;
     &:not(:hover) {
@@ -139,7 +139,7 @@ $card-large: 26;
       margin-top: 10px;
       border-radius: 50%;
       background-size: cover;
-      background-image: url(../accest/images/fox-avatar.jpg);
+      background-image: url(../assets/images/fox-avatar.jpg);
   
       margin-bottom: 1px;
     }
@@ -152,4 +152,10 @@ $card-large: 26;
       max-width: 50px;
     }
   }
+
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
   

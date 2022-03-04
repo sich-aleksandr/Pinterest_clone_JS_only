@@ -1,4 +1,4 @@
-import { createElement } from "../utils/utils.js"
+import { createElement } from "../utils/utils.js";
 
 function Toast(options) {
   this.init = function () {
@@ -11,11 +11,11 @@ function Toast(options) {
       setTimeout(() => {
         this.open();
         resolve();
-      }, 3000);
+      }, 15000);
     }).then(() => {
       setTimeout(() => {
         this.close();
-      }, 2000);
+      }, 5000);
     });
   };
   this.handleToast = (event) => {
