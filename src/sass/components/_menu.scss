@@ -22,6 +22,7 @@
     &__list {
     margin: 5px;
     padding: 0px;
+    @include flex-c-c-s;
     }
     &__list li {
         cursor: pointer;
@@ -32,6 +33,7 @@
         display: block;
         text-decoration: none;
         color: black;
+        font-weight: 700;
     }
     &__list li:hover {
         border-radius: 10px;
