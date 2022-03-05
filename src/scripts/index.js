@@ -1,7 +1,9 @@
-import { menu } from "./components/Menu.js";
+import { menu } from "./components/Menu.js"
 import { modalСomplaint, modalAddDesk } from "./components/ModalСomplaints.js";
+import { pint } from "./components/pint-item.js";
 import { toast } from "./components/Toast.js";
 
+pint.render()
 toast;
 modalСomplaint.init();
 
