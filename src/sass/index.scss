@@ -3,6 +3,9 @@
 @import 'config/mixins';
 @import 'config/global-styles';
 @import 'components/header';
+@import 'components/main';
 @import 'components/menu';
-@import 'components/modal';
+@import 'components/modal-complaint';
 @import 'components/card';
+@import 'components/toast';
+@import 'components/footer';

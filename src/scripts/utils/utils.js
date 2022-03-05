@@ -6,4 +6,13 @@ function trimText(text, maxlength) {
   return text.length > maxlength ? text.substring(0, maxlength) + "..." : text;
 }
 
-export { getUUID, trimText };
+function createElement(tag, className, text = "") {
+  const element = document.createElement(tag);
+  const textElement = document.createTextNode(text);
+  element.className = className;
+  element.append(textElement);
+  return element;
+}
+
+
+export { getUUID, trimText, createElement };

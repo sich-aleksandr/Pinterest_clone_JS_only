@@ -1,11 +1,30 @@
+$card-width: 170px;
+$row-increment: 10px;
+$card-border-radius: 25px;
+$card-small: 21;
+$card-medium: 24;
+$card-large: 26;
+
+.pin_container {
+  margin: 0;
+  padding: 0;
+  width: 95vw;
+  // position: absolute;
+  // left: 50%;
+  // transform: translateX(-50%);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $card-width);
+  grid-auto-rows: $row-increment;
+  justify-content: center;
+}
 .card {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: column;
-    margin-left: 25px;
-    margin-bottom: 25px;
-    width: 150px;
-    border-radius: 25px;
+    margin: 10px 15px;
+    width: $card-width;
+    border-radius: $card-border-radius;
     &:hover {
       .card__description {
         opacity: 1;
@@ -23,7 +42,17 @@
       }
     }
   }
-  
+.card_small {
+    grid-row-end: span $card-small;
+}
+
+.card_medium {
+    grid-row-end: span $card-medium;
+}
+
+.card_large {
+    grid-row-end: span $card-large;
+}
   .card__image-board {
     display: flex;
     position: relative;
@@ -32,7 +61,7 @@
     width: 150px;
     align-items: flex-end;
     border-radius: 25px;
-    background-image: url(../accest/images/girl.jpg);
+    background-image: url(../assets/images/girl.jpg);
     background-size: cover;
     box-shadow: 0 0 8px 0px;
     &:not(:hover) {
@@ -110,7 +139,7 @@
       margin-top: 10px;
       border-radius: 50%;
       background-size: cover;
-      background-image: url(../accest/images/fox-avatar.jpg);
+      background-image: url(../assets/images/fox-avatar.jpg);
   
       margin-bottom: 1px;
     }
@@ -123,4 +152,10 @@
       max-width: 50px;
     }
   }
+
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
   

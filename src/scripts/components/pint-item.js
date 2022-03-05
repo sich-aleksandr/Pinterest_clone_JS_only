@@ -1,5 +1,6 @@
 // Logic For one Pint Item
-import { getUUID } from "../utils/utils.js";
+import { getDBdata, apiUrl } from "./servises/dbAPI.js"
+const data = getDBdata(apiUrl);
 
 const apiUrl =
   "https://6218fefb81d4074e859e849d.mockapi.io/api/pinterst/pinterest";

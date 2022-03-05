@@ -9,6 +9,7 @@
     height: 120px;
     padding: 4px 16px;
     background: #fff;
+    z-index: 2;
 
     &__logo-container {
         display: flex;
@@ -26,7 +27,7 @@
             min-width: 100%;
             min-height: 100%;
             border: 10px solid transparent;
-            background: url(../accest/icons/logo.svg) no-repeat center;
+            background: url(../assets/icons/logo.svg) no-repeat center;
         }
     }
 
@@ -70,7 +71,7 @@
                 left: 15px;
                 width: 18px;
                 height: 24px;
-                background: url(../accest/icons/search.svg);
+                background: url(../assets/icons/search.svg);
     
                 &:hover {
                     cursor: pointer;
@@ -84,7 +85,7 @@
                 display: none;
                 width: 60px;
                 height: 60px;
-                background: url(../accest/icons/remove-button.svg) no-repeat center;
+                background: url(../assets/icons/remove-button.svg) no-repeat center;
                 border: 15px solid transparent;
                 border-radius: 50%;
 
