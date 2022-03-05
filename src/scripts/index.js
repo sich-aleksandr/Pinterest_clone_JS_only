@@ -3,9 +3,16 @@ import { modalСomplaint, modalAddDesk } from "./components/ModalСomplaints.js"
 import { allPints } from "./components/Pint-item.js";
 import { toast } from "./components/Toast.js";
 
-allPints;
-toast;
-modalСomplaint.init();
+app();
+
+
+
+
+function app () {
+  allPints;
+  toast;
+  modalСomplaint.init();
+}
 
 // const btnOpenMenu = document.querySelector("#add-button");
 // const closeMenu = document.querySelector(".menu");
