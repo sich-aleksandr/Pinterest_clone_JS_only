@@ -1,47 +1,54 @@
 // Logic For one Pint Item
-import { getDBdata, apiUrl } from "./servises/dbAPI.js"
-const data = getDBdata(apiUrl);
+import { getDBdata, apiUrl } from "../servises/dbAPI.js";
+import { createElement, getRandomInt } from "../utils/utils.js";
 
-const apiUrl =
-  "https://6218fefb81d4074e859e849d.mockapi.io/api/pinterst/pinterest";
-
-function getDBdata(url) {
-  return fetch(url)
-    .then((response) => response.json())
-    .then((data) => data);
+const sizeStyles = {
+  0: "card_small",
+  1: "card_medium",
+  2: "card_large",
 }
 
-
-const options = {
-  description: "Description of the card",
-  root: document.querySelector(".card"),
-  id: getUUID(),
-  avatar:
-    'url("https://avatars.mds.yandex.net/i?id=1e2e6d599f29207a7cfe601dc89a85ba-5878684-images-thumbs&n=13&exp=1")',
-  image:
-    'url("https://img1.fonwall.ru/o/pt/ahri-league-of-legends-games-artwork-pfaj.jpeg?route=mid&h=750")',
-};
-
-function Pint({ avatar, id, image, description, root }) {
-  this.root = root;
-  this.image = image;
+function Pint({ imageURL, avatarURL, description, id }) {
+  this.path = document.querySelector('.pin_container');
+  this.image = `url(${imageURL})`;
   this.description = description;
-  this.id = id;
-  this.avatar = avatar;
+  this.id = `pint-${id}`;
+  this.avatar = `url(${avatarURL})`;
 
+  this.init = function () {
+    this.render();
+  }
   this.render = function () {
-    root.querySelector(".card__text").textContent = this.description;
-    root.querySelector(".card__image-board").style["background-image"] =
-      this.image;
-    root.querySelector(".card__avatar").style["background-image"] = this.avatar;
-    root.id = this.id;
-
+    const pint = createElement("div", `card ${sizeStyles[getRandomInt(3)]}`);
+    const imageBoard = createElement("div", "card__image-board");
+    imageBoard.style.backgroundImage = this.image;
+    const button = createElement("button", "card__menu-button", "ADD");
+    button.type = "button";
+    const description = createElement("div", "card__description");
+    const avatarImage = createElement("div", "card__avatar");
+    avatarImage.style.backgroundImage = this.avatar;
+    const text = createElement("div", "card__text", this.description);
+    imageBoard.append(button);
+    description.append(avatarImage, text);
+    pint.append(imageBoard, description);
+    pint.id = this.id;
+    pint.addEventListener("click", () => {
+      console.log(pint);
+    })
+    this.path.append(pint);
   };
   this.hidePint = function () {
-    this.root.style.display = 'none'
-  }
+    this.path.style.display = "none";
+  };
 }
 
-const pint = new Pint(options);
+function printAllPints(datas) {
+  datas.forEach((item) => {
+    new Pint(item).init();
+  });
+}
 
-export { pint };
+
+const allPints = getDBdata(apiUrl).then(printAllPints);
+
+export { allPints};
