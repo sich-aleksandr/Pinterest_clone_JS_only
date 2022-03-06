@@ -1,5 +1,5 @@
 function Menu(root) {
-    this.root = document.querySelector("#menu");
+    this.root = document.querySelector("#pint-1");
     
     this.open = function (x, y) {
         this.root.classList.add('open');
