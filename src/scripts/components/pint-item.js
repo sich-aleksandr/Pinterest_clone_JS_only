@@ -1,6 +1,9 @@
 // Logic For one Pint Item
 import { getDBdata, apiUrl } from "../servises/dbAPI.js";
 import { createElement, getRandomInt } from "../utils/utils.js";
+import { menu } from "./Menu.js"
+
+let pintId;
 
 const sizeStyles = {
   0: "card_small",
@@ -9,6 +12,7 @@ const sizeStyles = {
 }
 
 function Pint({ imageURL, avatarURL, description, id }) {
+  this.root = null;
   this.path = document.querySelector('.pin_container');
   this.image = `url(${imageURL})`;
   this.description = description;
@@ -16,7 +20,8 @@ function Pint({ imageURL, avatarURL, description, id }) {
   this.avatar = `url(${avatarURL})`;
 
   this.init = function () {
-    this.render();
+    this.root = this.render();
+    this.root.addEventListener("click", this.handlePint);
   }
   this.render = function () {
     const pint = createElement("div", `card ${sizeStyles[getRandomInt(3)]}`);
@@ -32,23 +37,26 @@ function Pint({ imageURL, avatarURL, description, id }) {
     description.append(avatarImage, text);
     pint.append(imageBoard, description);
     pint.id = this.id;
-    pint.addEventListener("click", () => {
-      console.log(pint);
-    })
     this.path.append(pint);
+    return pint;
   };
+  this.handlePint = (event) => {
+    if (event.target.type === "button") {
+      menu.open(event.clientX, event.clientY);
+      pintId = this.id.slice(5);
+    }
+  }
   this.hidePint = function () {
     this.path.style.display = "none";
   };
 }
-
-function printAllPints(datas) {
+function renderAllPints(datas) {
   datas.forEach((item) => {
     new Pint(item).init();
   });
 }
 
 
-const allPints = getDBdata(apiUrl).then(printAllPints);
+const allPints = getDBdata(apiUrl).then(renderAllPints);
 
-export { allPints};
+export { allPints, pintId};

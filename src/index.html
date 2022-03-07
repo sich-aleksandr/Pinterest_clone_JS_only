@@ -48,9 +48,9 @@
             <div id="menu" class="menu">
                 <h2 class="menu__header">Этот пин похож на те, которые вы недавно просматривали</h2>
                 <div class="menu__list">
-                    <button class="btn first" type="button">Добавить на доску</button>
+                    <button class="btn first" type="button" id="btn-modal-add-desk">Добавить на доску</button>
                     <span class="menu__list-link" href="#">Скрыть пин со страницы</span>
-                    <button class="btn first" type="button">Пожаловаться</button>
+                    <button class="btn first" type="button" id="btn-modal-complaint">Пожаловаться</button>
                 </div>
             </div>
             <div class="modal" id="modal-complaints">
@@ -67,6 +67,31 @@
                                 <button class="btn" type="button" data-close="true">Отмена</button>
                                 <button class="btn btn-next" type="submit" formaction="#">Далее</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="modal-add">
+                <div class="modal__overlay" data-close="true">
+                    <div class="modal__window">
+                        <div class="modal__header">
+                            <h2 class="header-title">Добавить Пин на доску:</h2>
+                        </div>
+                        <div class="modal__body modal__body-add">
+                            <div class="modal__row">
+                                <div class="modal__row-column"><input class="modal__row-radio" type="radio" id="desk1" name="desk" value="1" checked></div>
+                                <div class="modal__row-column"><label for="desk1">Доска 1</label>
+                            </div>
+
+                            <div class="modal__row">
+                                <div class="modal__row-column"><input class="modal__row-radio" type="radio" id="desk2" name="desk" value="2"></div>
+                                <div class="modal__row-column"><label for="desk2">Доска 2</label>
+                            </div>
+
+                            <div class="modal__row">
+                                <div class="modal__row-column"><input class="modal__row-radio" type="radio" id="desk3" name="desk" value="3"></div>
+                                <div class="modal__row-column"><label for="desk3">Доска 3</label>
+                            </div> 
                         </div>
                     </div>
                 </div>
