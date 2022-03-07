@@ -27,6 +27,19 @@ const complaints = [{
     subtitle: 'Нарушение авторских прав или прав на товарный знак'
 }];
 
+function modalAddDesk() {
+    this.root = document.querySelector('#modal-add');
+
+    this.init = function () {
+        document.querySelector("#btn-modal-add-desk").addEventListener('click', this.open)  
+    }
+
+    this.open = () => {
+        this.root.classList.add("open");
+    }
+
+}
+
 
 function ModalСomplaints() {
     this.root = document.querySelector('#modal-complaints');
@@ -34,8 +47,7 @@ function ModalСomplaints() {
     this.init = function () {
         this.render();
         this.root.addEventListener('click', this.close);
-        document.querySelector("#btn-modal-complaint").addEventListener("click", this.open);
-        document.querySelector("#btn-modal-add-desk").addEventListener('click', () => {modalAddDesk.open()})    
+        document.querySelector("#btn-modal-complaint").addEventListener("click", this.open);  
     }
 
     this.handleComplainst = (event) => {
@@ -72,6 +84,7 @@ function ModalСomplaints() {
     }
 }
 
-const modalСomplaint = new ModalСomplaints()
+const modalСomplaint = new ModalСomplaints();
+const modaladd = new modalAddDesk();
 
-export { modalСomplaint };
+export { modalСomplaint, modaladd };
