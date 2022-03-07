@@ -1,5 +1,12 @@
 import { pintId } from "./Pint-item.js";
-import { getLocalData, setLocalData, DESK_LISK_KEY } from "../servises/storageAPI.js";
+import {
+  getLocalData,
+  setLocalData,
+  DESK_LIST_KEY,
+  listKey,
+  DESK_DELETE_KEY,
+  delId,
+} from "../servises/storageAPI.js";
 
 const complaints = [
   {
@@ -57,16 +64,17 @@ function modalAddDesk() {
 
   this.handleModalAdd = (event) => {
     if (event.target.type === "radio") {
-        this.add();
+      this.add();
     } else {
-        this.close();
-    }s
+      this.close();
+    }
+    s;
   };
 
   this.add = function () {
-    const pintList = getLocalData(DESK_LISK_KEY);
+    const pintList = getLocalData(DESK_LIST_KEY, listKey);
     pintList[event.target.value - 1].push(pintId);
-    setLocalData(DESK_LISK_KEY, pintList);
+    setLocalData(DESK_LIST_KEY, pintList);
     this.close();
   };
 
@@ -80,22 +88,33 @@ function ModalСomplaints() {
 
   this.init = function () {
     this.render();
-    this.root.addEventListener("click", this.close);
+    this.root.addEventListener("click", this.handleComplainst);
     document
       .querySelector("#btn-modal-complaint")
       .addEventListener("click", this.open);
   };
 
-  this.handleComplainst = (event) => {};
-
   this.open = () => {
     this.root.classList.add("open");
   };
 
-  this.close = ({ target }) => {
+  this.handleComplainst = ({ target }) => {
     if (target.dataset.close) {
-      this.root.classList.remove("open");
+        this.close();
+    } else if (target.type === "submit") {
+      this.deletePint();
     }
+  };
+
+  this.close = () => {
+    this.root.classList.remove("open");
+  }
+
+  this.deletePint = () => {
+    const pintDeteleList = getLocalData(DESK_DELETE_KEY, delId);
+    pintDeteleList.push(pintId);
+    setLocalData(DESK_DELETE_KEY, pintDeteleList);
+    this.close();
   };
 
   this.render = function () {
