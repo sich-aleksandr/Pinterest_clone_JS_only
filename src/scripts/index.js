@@ -5,13 +5,10 @@ import { toast } from "./components/Toast.js";
 
 app();
 
-
-
-
 function app () {
   allPints;
   toast;
-  modalСomplaint.init();
+  // modalСomplaint.init();
 }
 
 // const btnOpenMenu = document.querySelector("#add-button");
@@ -31,7 +28,7 @@ btnModalAddDesk.addEventListener('click', () => {
     modalAddDesk.open()
 }) */
 
-const btnModalСomplaint = document.querySelector("#pint-1");
-btnModalСomplaint.addEventListener("click", () => {
-  modalСomplaint.open();
-});
+// const btnModalСomplaint = document.querySelector("#pint-1");
+// btnModalСomplaint.addEventListener("click", () => {
+//   modalСomplaint.open();
+// });
