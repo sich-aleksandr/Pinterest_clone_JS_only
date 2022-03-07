@@ -3,6 +3,8 @@ import { getDBdata, apiUrl } from "../servises/dbAPI.js";
 import { createElement, getRandomInt } from "../utils/utils.js";
 import { menu } from "./Menu.js"
 
+let pintId;
+
 const sizeStyles = {
   0: "card_small",
   1: "card_medium",
@@ -41,6 +43,7 @@ function Pint({ imageURL, avatarURL, description, id }) {
   this.handlePint = (event) => {
     if (event.target.type === "button") {
       menu.open(event.clientX, event.clientY);
+      pintId = this.id.slice(5);
     }
   }
   this.hidePint = function () {
@@ -56,4 +59,4 @@ function renderAllPints(datas) {
 
 const allPints = getDBdata(apiUrl).then(renderAllPints);
 
-export { allPints};
+export { allPints, pintId};
