@@ -32,12 +32,18 @@ function ModalСomplaints() {
     this.root = document.querySelector('#modal-complaints');
 
     this.init = function () {
-        this.render()
-        this.root.addEventListener('click', this.close)
+        this.render();
+        this.root.addEventListener('click', this.close);
+        document.querySelector("#btn-modal-complaint").addEventListener("click", this.open);
+        document.querySelector("#btn-modal-add-desk").addEventListener('click', () => {modalAddDesk.open()})    
     }
 
-    this.open = function () {
-        this.root.classList.add('open')
+    this.handleComplainst = (event) => {
+
+    }    
+
+    this.open = () => {
+        this.root.classList.add("open");
     }
 
     this.close = ({ target }) => {

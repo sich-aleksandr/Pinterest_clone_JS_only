@@ -6,8 +6,7 @@ function Menu(root) {
         this.root.classList.add('open');
         this.root.style.top = `${y - 70}px`;
         document.addEventListener('click', this.hendleMenu)
-        document.addEventListener('wheel', () => this.close())
-        
+        document.addEventListener('wheel', () => this.close() )
         if (windowWidth >= (x + 60 + 300)) {
             this.root.style.left = `${x + 60}px`;
         } else {
