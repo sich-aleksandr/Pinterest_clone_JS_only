@@ -36,10 +36,18 @@
                 </svg>
             </div>
             <span class="header__user-container header__user-container-size" id="show-menu">User</span>
-            <div class="header__dropdown-menu">
-                <svg width="24" height="14">
-                    <use xlink:href="#header__dropdown-menu"></use>
-                </svg>
+            <div id="dropdown-menu" class="header__dropdown-menu">
+                <button id="dropdown-menu-btn" type="button" class="dropdown-menu-btn">
+                    <svg width="24" height="14">
+                        <use xlink:href="#header__dropdown-menu"></use>
+                    </svg>
+                </button>
+                <div id="dropdown-content" class="dropdown-menu-content">
+                    <h2 class="dropdown-menu-content-title">Обновления</h2>
+                    <div class="dropdown-menu-content-item"><a href="#">Доска 1</a></div>
+                    <div class="dropdown-menu-content-item"><a href="#">Доска 2</a></div>
+                    <div class="dropdown-menu-content-item"><a href="#">Доска 3</a></div>
+                </div>
             </div>
         </header>
         <main>
