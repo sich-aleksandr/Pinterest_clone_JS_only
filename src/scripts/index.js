@@ -3,7 +3,7 @@ import { allPints } from "./components/Pint-item.js";
 import { toast } from "./components/Toast.js";
 import { dropdownMenu } from "./components/Dropdown.js"
 
-app();
+document.addEventListener("DOMContentLoaded", app)
 
 function app () {
   allPints;
