@@ -1,5 +1,5 @@
 import { pintId } from "./Pint-item.js";
-import { deletedItems } from "../servises/storageAPI.js";
+import { deletedItems } from "../services/storageAPI.js";
 
 const complaints = [
   {

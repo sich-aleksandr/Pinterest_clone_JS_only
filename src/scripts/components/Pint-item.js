@@ -1,5 +1,5 @@
 // Logic For one Pint Item
-import { getDBdata, apiUrl } from "../servises/mockAPI.js";
+import { getDBdata, apiUrl } from "../services/mockAPI.js";
 import { createElement, getRandomInt } from "../utils/utils.js";
 import { menu } from "./Menu.js"
 

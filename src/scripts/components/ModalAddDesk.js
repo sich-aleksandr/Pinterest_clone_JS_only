@@ -1,5 +1,5 @@
 import { pintId } from "./Pint-item.js";
-import { localDataList } from "../servises/storageAPI.js";
+import { localDataList } from "../services/storageAPI.js";
 
 function modalAddDesk() {
   this.root = document.querySelector("#modal-add");
