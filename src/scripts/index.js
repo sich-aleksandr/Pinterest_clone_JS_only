@@ -1,4 +1,5 @@
-import { modalСomplaint, modaladd } from "./components/Modals.js";
+import { modaladd } from "./components/ModalAddDesk.js";
+import { modalСomplaint } from "./components/ModalComplaints.js";
 import { allPints } from "./components/Pint-item.js";
 import { toast } from "./components/Toast.js";
 import { dropdownMenu } from "./components/Dropdown.js"
