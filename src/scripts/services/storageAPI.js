@@ -1,3 +1,4 @@
+// такое ощущение, что здесь нужны классы)
 const localDataList = {
   key: "pintrest-desks",
   storage: [[], [], []],
