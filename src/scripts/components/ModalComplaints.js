@@ -1,12 +1,5 @@
 import { pintId } from "./Pint-item.js";
-import {
-  getLocalData,
-  setLocalData,
-  DESK_LIST_KEY,
-  listKey,
-  DESK_DELETE_KEY,
-  delId,
-} from "../servises/storageAPI.js";
+import { deletedItems } from "../servises/storageAPI.js";
 
 const complaints = [
   {
@@ -48,41 +41,6 @@ const complaints = [
   },
 ];
 
-function modalAddDesk() {
-  this.root = document.querySelector("#modal-add");
-
-  this.init = function () {
-    document
-      .querySelector("#btn-modal-add-desk")
-      .addEventListener("click", this.open);
-    this.root.addEventListener("click", this.handleModalAdd);
-  };
-
-  this.open = () => {
-    this.root.classList.add("open");
-  };
-
-  this.handleModalAdd = (event) => {
-    if (event.target.type === "radio") {
-      this.add();
-    } else {
-      this.close();
-    }
-    s;
-  };
-
-  this.add = function () {
-    const pintList = getLocalData(DESK_LIST_KEY, listKey);
-    pintList[event.target.value - 1].push(pintId);
-    setLocalData(DESK_LIST_KEY, pintList);
-    this.close();
-  };
-
-  this.close = (target) => {
-    this.root.classList.remove("open");
-  };
-}
-
 function ModalСomplaints() {
   this.root = document.querySelector("#modal-complaints");
 
@@ -100,7 +58,7 @@ function ModalСomplaints() {
 
   this.handleComplainst = ({ target }) => {
     if (target.dataset.close) {
-        this.close();
+      this.close();
     } else if (target.type === "submit") {
       this.deletePint();
     }
@@ -108,12 +66,12 @@ function ModalСomplaints() {
 
   this.close = () => {
     this.root.classList.remove("open");
-  }
+  };
 
   this.deletePint = () => {
-    const pintDeteleList = getLocalData(DESK_DELETE_KEY, delId);
+    const pintDeteleList = deletedItems.get();
     pintDeteleList.push(pintId);
-    setLocalData(DESK_DELETE_KEY, pintDeteleList);
+    deletedItems.set(pintDeteleList);
     this.close();
   };
 
@@ -123,24 +81,23 @@ function ModalСomplaints() {
       this.modalBody.insertAdjacentHTML(
         "beforeend",
         `
-                <label>
-                    <div class="modal__body-item">
-                        <div class="item-choice">
-                            <input type="checkbox" class="checkbox">
-                            <span class="fake"></span>
-                        </div>
-                        <div class="item-text">
-                            <h3 class="item-text-title">${complaint.title}</h3>
-                            <p class="item-text-subtitle">${complaint.subtitle}</p>
-                        </div>
-                    </div>
-                </label>`
+                  <label>
+                      <div class="modal__body-item">
+                          <div class="item-choice">
+                              <input type="checkbox" class="checkbox">
+                              <span class="fake"></span>
+                          </div>
+                          <div class="item-text">
+                              <h3 class="item-text-title">${complaint.title}</h3>
+                              <p class="item-text-subtitle">${complaint.subtitle}</p>
+                          </div>
+                      </div>
+                  </label>`
       );
     });
   };
 }
 
 const modalСomplaint = new ModalСomplaints();
-const modaladd = new modalAddDesk();
 
-export { modalСomplaint, modaladd };
+export { modalСomplaint };

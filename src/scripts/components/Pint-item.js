@@ -1,5 +1,5 @@
 // Logic For one Pint Item
-import { getDBdata, apiUrl } from "../servises/dbAPI.js";
+import { getDBdata, apiUrl } from "../servises/mockAPI.js";
 import { createElement, getRandomInt } from "../utils/utils.js";
 import { menu } from "./Menu.js"
 
@@ -55,7 +55,6 @@ function renderAllPints(datas) {
     new Pint(item).init();
   });
 }
-
 
 const allPints = getDBdata(apiUrl).then(renderAllPints);
 
