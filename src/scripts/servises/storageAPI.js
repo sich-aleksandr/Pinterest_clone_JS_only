@@ -1,15 +1,25 @@
-const DESK_LIST_KEY = "pintrest-desk";
-const DESK_DELETE_KEY = "pintrest-delete-items";
-const listKey = [[],[],[]];
-const delId = [];
+const localDataList = {
+  key: "pintrest-desks",
+  storage: [[], [], []],
+  get: function () {
+    let data = JSON.parse(localStorage.getItem(this.key));
+    return (data ??= this.storage);
+  },
+  set: function (data) {
+    localStorage.setItem(this.key, JSON.stringify(data));
+  },
+};
 
-function getLocalData(key, storedge) {
-  let data = JSON.parse(localStorage.getItem(key));
-  return data ??= storedge;
+const deletedItems = {
+  key: "pintrest-delete-items",
+  storage: [],
+  get: function () {
+    let data = JSON.parse(localStorage.getItem(this.key));
+    return (data ??= this.storage);
+  },
+  set: function (data) {
+    localStorage.setItem(this.key, JSON.stringify(data));
+  },
 }
 
-function setLocalData(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
-export { getLocalData, setLocalData, DESK_LIST_KEY, listKey, DESK_DELETE_KEY, delId };
+export { localDataList, deletedItems };

@@ -1,12 +1,5 @@
 import { pintId } from "./Pint-item.js";
-import {
-  getLocalData,
-  setLocalData,
-  DESK_LIST_KEY,
-  listKey,
-  DESK_DELETE_KEY,
-  delId,
-} from "../servises/storageAPI.js";
+import { localDataList, deletedItems } from "../servises/storageAPI.js";
 
 const complaints = [
   {
@@ -72,9 +65,10 @@ function modalAddDesk() {
   };
 
   this.add = function () {
-    const pintList = getLocalData(DESK_LIST_KEY, listKey);
+    const pintList = localDataList.get();
+    console.log(pintList);
     pintList[event.target.value - 1].push(pintId);
-    setLocalData(DESK_LIST_KEY, pintList);
+    localDataList.set(pintList);
     this.close();
   };
 
@@ -100,7 +94,7 @@ function ModalСomplaints() {
 
   this.handleComplainst = ({ target }) => {
     if (target.dataset.close) {
-        this.close();
+      this.close();
     } else if (target.type === "submit") {
       this.deletePint();
     }
@@ -108,12 +102,12 @@ function ModalСomplaints() {
 
   this.close = () => {
     this.root.classList.remove("open");
-  }
+  };
 
   this.deletePint = () => {
-    const pintDeteleList = getLocalData(DESK_DELETE_KEY, delId);
+    const pintDeteleList = deletedItems.get();
     pintDeteleList.push(pintId);
-    setLocalData(DESK_DELETE_KEY, pintDeteleList);
+    deletedItems.set(pintDeteleList);
     this.close();
   };
 
