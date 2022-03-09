@@ -21,22 +21,21 @@ function modalAddDesk() {
     } else {
       this.close();
     }
-    s;
   };
 
   this.add = function () {
     const pintList = localDataList.get();
     console.log(pintList);
-    pintList[event.target.value - 1].push(pintId);
+    pintList[target.value - 1].push(pintId);
     localDataList.set(pintList);
     this.close();
   };
 
-  this.close = (target) => {
+  this.close = () => {
     this.root.classList.remove("open");
   };
 }
 
-const modaladd = new modalAddDesk();
+const modalAdd = new modalAddDesk();
 
-export { modalСomplaint, modaladd };
+export { modalAdd };
