@@ -12,5 +12,3 @@ function app () {
   modalСomplaint.init();
   modaladd.init();
 }
-
-
