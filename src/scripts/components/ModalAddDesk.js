@@ -23,10 +23,10 @@ function modalAddDesk() {
     }
   };
 
-  this.add = function () {
+    this.add = function () {
     const pintList = localDataList.get();
     console.log(pintList);
-    pintList[target.value - 1].push(pintId);
+    pintList[event.target.value - 1].push(pintId);
     localDataList.set(pintList);
     this.close();
   };
