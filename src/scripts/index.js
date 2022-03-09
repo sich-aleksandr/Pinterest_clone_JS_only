@@ -6,9 +6,11 @@ import { dropdownMenu } from "./components/Dropdown.js"
 document.addEventListener("DOMContentLoaded", app)
 
 function app () {
-  allPints;
-  toast;
-  dropdownMenu;
+  allPints; // add all pint item to DOM
+  toast; // load toast on start of app
+
+  //Menus
+  dropdownMenu; // menu with desks
   modalСomplaint.init();
   modaladd.init();
 }
