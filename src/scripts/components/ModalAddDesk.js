@@ -24,6 +24,8 @@ function modalAddDesk() {
     } else {
         this.close();
     }
+    const checkbox = document.querySelector(".modal__row");
+    checkbox.addEventListener("click", toastCompleted.init());
   };
 
     this.add = function () {

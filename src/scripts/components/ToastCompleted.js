@@ -1,5 +1,5 @@
 function ToastCompleted() {
-    this.root = document.querySelector('#toast');
+    this.root = document.querySelector('#toast-completed');
     this.init = function () {
         this.open();
         this.closeTimeout();
@@ -12,16 +12,16 @@ function ToastCompleted() {
         }
     };
     this.open = function () {
-        this.root.classList.add("open-toast");
+        this.root.classList.add("open");
     };
 
     this.close = function () {
-        this.root.classList.remove("open-toast");
+        this.root.classList.remove("open");
     };
 
     this.closeTimeout = function () {
         setTimeout(() => {
-            this.root.classList.remove("open-toast");
+            this.root.classList.remove("open");
         }, 4000);
     }
 }

@@ -1,5 +1,6 @@
 import { pintId } from "./Pint-item.js";
 import { deletedItems } from "../services/storageAPI.js";
+import { toastCompleted } from "./ToastCompleted.js";
 
 const complaints = [
   {
@@ -70,9 +71,12 @@ function ModalСomplaints() {
 
   this.deletePint = () => {
     const pintDeteleList = deletedItems.get();
+      const btnNext = document.querySelector(".btn-next");
+      btnNext.addEventListener("click", toastCompleted.init());
     pintDeteleList.push(pintId);
     deletedItems.set(pintDeteleList);
     this.close();
+    
   };
 
   this.render = function () {

@@ -150,13 +150,20 @@
             transform: translateY(-80%);
             transition: all 0.8s ease;
             .dropdown-menu-content-item {
+                font-size: 20px;
                 margin: 10px 0px 10px 0px;
             }
+            .dropdown-menu-content-item a {
+                color: black;
+                text-decoration: none;
+
+            }
             .dropdown-menu-content-title {
+                font-size: 24px;
+                font-weight: 700;
                 display: flex;
                 justify-content: center;
                 padding: 15px;
-                font-weight: 700;
             }
         }
         .open {
