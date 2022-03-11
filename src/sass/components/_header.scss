@@ -147,28 +147,36 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             opacity: 0;
             z-index: -1;
-            transform: translateY(80%);
+            transform: translateY(-80%);
             transition: all 0.8s ease;
             .dropdown-menu-content-item {
+                font-size: 20px;
                 margin: 10px 0px 10px 0px;
             }
+            .dropdown-menu-content-item a {
+                color: black;
+                text-decoration: none;
+
+            }
             .dropdown-menu-content-title {
+                font-size: 24px;
+                font-weight: 700;
                 display: flex;
                 justify-content: center;
                 padding: 15px;
-                font-weight: 700;
             }
+        }
+        .open {
+            opacity: 1;
+            z-index: 700;
+            transform: translateY(80%);
         }
         
         .dropdown-menu-btn {
             border: none;
             background: none;
         }
-        .open {
-            opacity: 1;
-            z-index: 800;
 
-        }
         &:hover {
             background: rgb(239,239,239);
             border-radius: 50%;
