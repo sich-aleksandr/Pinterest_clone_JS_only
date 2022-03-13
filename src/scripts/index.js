@@ -1,8 +1,8 @@
+import { menu } from "./components/Menu";
 import { modalAdd } from "./components/ModalAddDesk.js";
 import { modalСomplaint } from "./components/ModalComplaints.js";
 import { allPints } from "./components/Pint-item.js";
 import { toast } from "./components/Toast.js";
-import { dropdownMenu } from "./components/Dropdown.js";
 
 document.addEventListener("DOMContentLoaded", app);
 
@@ -12,7 +12,7 @@ function app () {
   toast; // load toast on start of app
 
   //Menus
-  dropdownMenu; // menu with desks
+  menu; // menu with desks
   modalСomplaint.init();
   modalAdd.init();
 }
