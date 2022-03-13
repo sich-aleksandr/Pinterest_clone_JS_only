@@ -24,17 +24,17 @@ function modalAddDesk() {
     } else {
         this.close();
     }
-    const checkbox = document.querySelector(".modal__row");
-    checkbox.addEventListener("click", toastCompleted.init());
   };
 
     this.add = function () {
     const pintList = localDataList.get();
+    const checkbox = document.querySelector(".modal__row");
     console.log(pintList);
     pintList[event.target.value - 1].push(pintId);
     localDataList.set(pintList);
     this.close();
     
+    checkbox.addEventListener("click", toastCompleted.init());
   };
 
   this.close = () => {

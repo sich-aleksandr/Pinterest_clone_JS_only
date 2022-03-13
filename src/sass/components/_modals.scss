@@ -97,9 +97,15 @@
     }
   }
   &__row {
-    margin: 20px 0;
+      margin: 10px 0;
+
     &-column {
-      display: inline-block;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    &-column>input {
+        margin-right: 10px;
     }
 }
   &__footer-btns {
