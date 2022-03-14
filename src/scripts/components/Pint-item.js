@@ -1,8 +1,8 @@
 // Logic For one Pint Item
-import { getPints, getPint } from "../servises/mockAPI.js";
+import { getPints, getPint } from "../services/mockAPI.js";
 import { createElement, getRandomInt, fillArray } from "../utils/utils.js";
 import { menu } from "./Menu.js";
-import { localDataList } from "../servises/storageAPI";
+import { localDataList } from "../services/storageAPI";
 
 let pintId;
 let start = 10;
