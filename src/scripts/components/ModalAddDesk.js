@@ -28,12 +28,11 @@ function modalAddDesk() {
     const pintList = localDataList.get();
     const checkbox = document.querySelector(".modal__row");
     if (pintList[event.target.value - 1].includes(pintId, 0)) {
-      console.log("no sucses");
+      toastCompleted.init(`На доске ${event.target.value} уже есть такой пинт`);
     } else {
     pintList[event.target.value - 1].push(pintId);
     localDataList.set(pintList);
-    checkbox.addEventListener("click", toastCompleted.init());
-    console.log("sucses");
+    checkbox.addEventListener("click", toastCompleted.init(`Пинт успешно добавлен на доску ${event.target.value}`));
     this.close();
   }
   };
