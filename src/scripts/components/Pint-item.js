@@ -2,7 +2,7 @@
 import { getPints, getPint } from "../services/mockAPI.js";
 import { createElement, getRandomInt, fillArray } from "../utils/utils.js";
 import { menu } from "./Menu.js";
-import { localDataList } from "../services/storageAPI";
+import { localDataList, deletedItems } from "../services/storageAPI";
 
 let pintId;
 
@@ -25,22 +25,42 @@ function Pint({ imageURL, avatarURL, description, id }) {
     this.root.addEventListener("click", this.handlePint);
   };
   this.render = function () {
-    const pint = createElement("div", `card ${sizeStyles[getRandomInt(3)]}`);
-    const imageBoard = createElement("div", "card__image-board");
-    imageBoard.style.backgroundImage = this.image;
-    const button = createElement("button", "card__menu-button", "ADD");
-    button.type = "button";
-    const description = createElement("div", "card__description");
-    const avatarImage = createElement("div", "card__avatar");
-    avatarImage.style.backgroundImage = this.avatar;
-    const text = createElement("div", "card__text", this.description);
-    imageBoard.append(button);
-    description.append(avatarImage, text);
-    pint.append(imageBoard, description);
-    pint.id = this.id;
-    this.path.append(pint);
-    return pint;
+    const bannetItems = deletedItems.get();
+    if (bannetItems.includes(id, 0)){
+      const pint = createElement("div", `card ${sizeStyles[getRandomInt(3)]}`);
+      const imageBoard = createElement("div", "card__image-board card__image-board--banned");
+      imageBoard.style.backgroundImage = this.image;
+      const button = createElement("button", "card__menu-button", "ADD");
+      button.type = "button";
+      const description = createElement("div", "card__description");
+      const avatarImage = createElement("div", "card__avatar");
+      avatarImage.style.backgroundImage = this.avatar;
+      const text = createElement("div", "card__text", this.description);
+      imageBoard.append(button);
+      description.append(avatarImage, text);
+      pint.append(imageBoard, description);
+      pint.id = this.id;
+      this.path.append(pint);
+      return pint;
+    } else {
+      const pint = createElement("div", `card ${sizeStyles[getRandomInt(3)]}`);
+      const imageBoard = createElement("div", "card__image-board");
+      imageBoard.style.backgroundImage = this.image;
+      const button = createElement("button", "card__menu-button", "ADD");
+      button.type = "button";
+      const description = createElement("div", "card__description");
+      const avatarImage = createElement("div", "card__avatar");
+      avatarImage.style.backgroundImage = this.avatar;
+      const text = createElement("div", "card__text", this.description);
+      imageBoard.append(button);
+      description.append(avatarImage, text);
+      pint.append(imageBoard, description);
+      pint.id = this.id;
+      this.path.append(pint);
+      return pint;
+    }
   };
+
   this.handlePint = (event) => {
     if (event.target.type === "button") {
       menu.open(event.clientX, event.clientY);

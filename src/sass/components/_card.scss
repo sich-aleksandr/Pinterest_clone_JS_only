@@ -64,6 +64,9 @@ $card-large: 26;
     background-image: url(../assets/images/girl.jpg);
     background-size: cover;
     box-shadow: 0 0 8px 0px;
+    &--banned {
+      color: #d91a1a;
+    }
     &:not(:hover) {
       display: flex;
       position: relative;

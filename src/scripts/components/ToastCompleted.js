@@ -23,7 +23,7 @@ function ToastCompleted(words) {
     this.closeTimeout = function () {
         setTimeout(() => {
             this.root.classList.remove("open");
-        }, 480000);
+        }, 4000);
     }
 }
 
