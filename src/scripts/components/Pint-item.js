@@ -59,7 +59,6 @@ function renderPints(datas) {
 }
 
 function displayPints(start, end) {
-  console.log(start);
   let leng = getPints().then((item) => {
     datas = item.slice(start,end);
     renderPints(datas);
