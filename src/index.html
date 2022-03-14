@@ -35,19 +35,13 @@
                     <use xlink:href="#header__chat"></use>
                 </svg>
             </div>
-            <span class="header__user-container header__user-container-size" id="show-menu">User</span>
             <div id="dropdown-menu" class="header__dropdown-menu">
-                <button id="dropdown-menu-btn" type="button" class="dropdown-menu-btn">
-                    <svg width="24" height="14">
-                        <use xlink:href="#header__dropdown-menu"></use>
-                    </svg>
-                </button>
-                <div id="dropdown-content" class="dropdown-menu-content">
-                    <h2 class="dropdown-menu-content-title">Обновления</h2>
-                    <div class="dropdown-menu-content-item"><a href="#">Доска 1</a></div>
-                    <div class="dropdown-menu-content-item"><a href="#">Доска 2</a></div>
-                    <div class="dropdown-menu-content-item"><a href="#">Доска 3</a></div>
-                </div>
+                <select class="dropdown-menu-content">
+                    <option value="0" class="dropdown-menu-content-item"><a href="#">Выберите доску:</a></option>
+                    <option value="1" class="dropdown-menu-content-item"><a href="#">Доска 1</a></option>
+                    <option value="2" class="dropdown-menu-content-item"><a href="#">Доска 2</a></option>
+                    <option value="3" class="dropdown-menu-content-item"><a href="#">Доска 3</a></option>
+                </select>
             </div>
         </header>
         <main>
@@ -57,7 +51,6 @@
                 <h2 class="menu__header">Этот пин похож на те, которые вы недавно просматривали</h2>
                 <div class="menu__list">
                     <button class="btn first" type="button" id="btn-modal-add-desk">Добавить на доску</button>
-                    <span class="menu__list-link" href="#">Скрыть пин со страницы</span>
                     <button class="btn first" type="button" id="btn-modal-complaint">Пожаловаться</button>
                 </div>
             </div>
@@ -87,18 +80,24 @@
                         </div>
                         <div class="modal__body modal__body-add">
                             <div class="modal__row">
-                                <div class="modal__row-column"><input class="modal__row-radio" type="radio" id="desk1" name="desk" value="1" checked></div>
-                                <label for="desk1">Доска 1</label>
+                                <div class="modal__row-column">
+                                    <input class="modal__row-radio" type="radio" id="desk3" name="desk" value="3">
+                                    <label for="desk3">Доска 1</label>
+                                </div>
                             </div>
 
                             <div class="modal__row">
-                                <div class="modal__row-column"><input class="modal__row-radio" type="radio" id="desk2" name="desk" value="2"></div>
-                                <label for="desk2">Доска 2</label>
+                                <div class="modal__row-column">
+                                    <input class="modal__row-radio" type="radio" id="desk3" name="desk" value="3">
+                                    <label for="desk3">Доска 2</label>
+                                </div>
                             </div>
 
-                            <div class="modal__row">
-                                <div class="modal__row-column"><input class="modal__row-radio" type="radio" id="desk3" name="desk" value="3"></div>
-                                <label for="desk3">Доска 3</label>
+                            <div class="modal__row"> 
+                                <div class="modal__row-column">
+                                    <input class="modal__row-radio" type="radio" id="desk3" name="desk" value="3">
+                                    <label for="desk3">Доска 3</label>
+                                </div>
                             </div> 
                         </div>
                     </div>
@@ -109,7 +108,7 @@
                     <div class="toast-completed__window">
                         <div class="toast-completed__heading">
                             <p class="heading-title">Данные сохранены успешно</p>
-                            <button class="heading-btn--close" type="button">X</button>
+                            <button class="heading-btn--close" type="button">&times;</button>
                         </div>
                     </div>
                 </div>
@@ -118,7 +117,7 @@
                 <div class="toast">
                     <div class="toast__heading">
                         <h3 class="toast__heading-title">Ку!</h3>
-                        <button class="toast__heading-btn--close" type="button" id="toast-close">X</button>
+                        <button class="toast__heading-btn--close" type="button" id="toast-close">&times;</button>
                     </div>
                     <p class="toast__text">Клади КЦ — получишь гравицаппу</p>
                 </div>
