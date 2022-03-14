@@ -19,6 +19,9 @@ body {
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
+    &--close{
+      display: none;
+    }
   }
   .btn:hover,
   .btn:focus {
