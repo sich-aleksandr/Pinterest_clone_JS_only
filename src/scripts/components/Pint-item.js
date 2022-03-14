@@ -1,10 +1,12 @@
 // Logic For one Pint Item
-import { getPints, getPint } from "../services/mockAPI.js";
-import { createElement, getRandomInt } from "../utils/utils.js";
+import { getPints, getPint } from "../servises/mockAPI.js";
+import { createElement, getRandomInt, fillArray } from "../utils/utils.js";
 import { menu } from "./Menu.js";
-import { localDataList } from "../services/storageAPI";
+import { localDataList } from "../servises/storageAPI";
 
 let pintId;
+let start = 10;
+let end = 20;
 
 const sizeStyles = {
   0: "card_small",
@@ -58,15 +60,28 @@ function renderPints(datas) {
   });
 }
 
-function displayOneDesk (n) {
+function displayPints(start, end) {
+  console.log(start);
+  let leng = getPints().then((item) => {
+    datas = item.slice(start,end);
+    renderPints(datas);
+  });
+}
+function displayOneDesk(n) {
   document.querySelector(".pin_container").innerHTML = "";
   const pinst = localDataList.get();
-  pinst[n].forEach(element => { 
-    getPint(element).then(data => {
+  pinst[n].forEach((element) => {
+    getPint(element).then((data) => {
       const getData = [data];
-      renderPints(getData)
-    }); 
+      renderPints(getData);
+    });
   });
 }
 
-export { renderPints, pintId, displayOneDesk };
+function loadMore() {
+  displayPints(start,end);
+  start = start + 10;
+  end = end + 10;
+}
+
+export { renderPints, pintId, displayOneDesk, displayPints, loadMore };
