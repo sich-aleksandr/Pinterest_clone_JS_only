@@ -59,6 +59,7 @@ function renderPints(datas) {
 }
 
 function displayOneDesk (n) {
+  document.querySelector(".pin_container").innerHTML = "";
   const pinst = localDataList.get();
   pinst[n].forEach(element => { 
     getPint(element).then(data => {
