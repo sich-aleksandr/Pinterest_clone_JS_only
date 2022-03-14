@@ -71,12 +71,21 @@ function ModalСomplaints() {
 
   this.deletePint = () => {
     const pintDeteleList = deletedItems.get();
-      const btnNext = document.querySelector(".btn-next");
-      btnNext.addEventListener("click", toastCompleted.init());
-    pintDeteleList.push(pintId);
-    deletedItems.set(pintDeteleList);
+    const btnNext = document.querySelector(".btn-next");
+    if (pintDeteleList.includes(pintId, 0)) {
+      toastCompleted.init(`Вы уже жаловались на этот пинт`);
+    } else {
+      btnNext.addEventListener(
+        "click",
+        toastCompleted.init(`Спасибо за жалобу`)
+      );
+      pintDeteleList.push(pintId);
+      deletedItems.set(pintDeteleList);
+      document
+        .querySelector(`#pint-${pintId}`)
+        .firstElementChild.classList.add("card__image-board--banned");
+    }
     this.close();
-    
   };
 
   this.render = function () {

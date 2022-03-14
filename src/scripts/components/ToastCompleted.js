@@ -1,7 +1,7 @@
-function ToastCompleted() {
+function ToastCompleted(words) {
     this.root = document.querySelector('#toast-completed');
-    this.init = function () {
-        this.open();
+    this.init = function (words) {
+        this.open(words);
         this.closeTimeout();
         this.root.addEventListener("click", this.handleToastCompleted);
     };
@@ -11,8 +11,9 @@ function ToastCompleted() {
             this.close();
         }
     };
-    this.open = function () {
+    this.open = function (words) {
         this.root.classList.add("open");
+        document.querySelector("#toast-title").innerHTML = `${words}`;
     };
 
     this.close = function () {
