@@ -5,8 +5,6 @@ import { menu } from "./Menu.js";
 import { localDataList } from "../services/storageAPI";
 
 let pintId;
-let start = 10;
-let end = 20;
 
 const sizeStyles = {
   0: "card_small",
@@ -78,10 +76,12 @@ function displayOneDesk(n) {
   });
 }
 
-function loadMore() {
+let start = 20;
+let end = 30;
+function loadMore(step) {
   displayPints(start,end);
-  start = start + 10;
-  end = end + 10;
+  start = start + step;
+  end = end + step;
 }
 
 export { renderPints, pintId, displayOneDesk, displayPints, loadMore };

@@ -9,11 +9,11 @@ export { selectDesk } from "./components/Dropdown.js";
 document.addEventListener("DOMContentLoaded", app);
 
 function app() {
-  displayPints(0,10);
+  displayPints(0,20);
   toast; // load toast on start of app
 
   document.querySelector("#load-more").addEventListener("click", () => {
-    loadMore();
+    loadMore(10);
   });
 
   //Menus
