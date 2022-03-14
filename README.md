@@ -68,7 +68,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Pinterest Clone][product-screenshot]](https://github.com/sich-aleksandr/ninja_dev/blob/dev/src/assets/images/wooden-background.jpg)
+[![Pinterest Clone][product-screenshot]](https://raw.githubusercontent.com/sich-aleksandr/ninja_dev/dev/src/assets/images/wooden-background.jpg?token=GHSAT0AAAAAABQPFT2B7LYPHQFEE3IQJCZ6YRPSCTA)
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
