@@ -1,7 +1,8 @@
 // Logic For one Pint Item
-import { getDBdata, apiUrl, getPints } from "../services/mockAPI.js";
+import { getPints, getPint } from "../services/mockAPI.js";
 import { createElement, getRandomInt } from "../utils/utils.js";
 import { menu } from "./Menu.js";
+import { localDataList } from "../services/storageAPI";
 
 let pintId;
 
@@ -50,12 +51,21 @@ function Pint({ imageURL, avatarURL, description, id }) {
     this.path.style.display = "none";
   };
 }
-function renderAllPints(datas) {
+
+function renderPints(datas) {
   datas.forEach((item) => {
     new Pint(item).init();
   });
 }
 
-const allPints = getPints().then(renderAllPints);
+function displayOneDesk (n) {
+  const pinst = localDataList.get();
+  pinst[n].forEach(element => { 
+    getPint(element).then(data => {
+      const getData = [data];
+      renderPints(getData)
+    }); 
+  });
+}
 
-export { allPints, pintId };
+export { renderPints, pintId, displayOneDesk };

@@ -13,7 +13,7 @@ const MOCK_SERVICE = {
 
 const getPint = (id) => {
   return new Promise((resolve, reject) => {
-    return fetch(BASE_SERVICE.getPint(id))
+    return fetch(MOCK_SERVICE.getPint(id))
       .then((response) => {
         if (response.ok) {
           const post = response.json();
