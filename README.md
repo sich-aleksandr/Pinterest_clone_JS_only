@@ -18,23 +18,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://seeklogo.com/images/P/pinterest-logo-CA98998DCB-seeklogo.com.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com>
+    <img src="https://seeklogo.com/images/P/pinterest-logo-CA98998DCB-seeklogo.com.png" alt="Logo" width="180" height="180">
   </a>
 
   <h3 align="center">Pinterest Clone</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Course project for FE-72
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/sich-aleksandr/ninja_dev">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/sich-aleksandr/ninja_dev/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/sich-aleksandr/ninja_dev/issues">Request Feature</a>
   </p>
 </div>
 
@@ -71,7 +68,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Pinterest Clone][product-screenshot]](https://github.com/sich-aleksandr/ninja_dev/blob/dev/src/assets/images/wooden-background.jpg)
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
