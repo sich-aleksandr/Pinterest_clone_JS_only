@@ -26,10 +26,15 @@ function Pint({ imageURL, avatarURL, description, id }) {
   };
   this.render = function () {
     const bannetItems = deletedItems.get();
-    if (bannetItems.includes(id, 0)){
+    if (bannetItems.includes(id, 0)) {
       const pint = createElement("div", `card ${sizeStyles[getRandomInt(3)]}`);
-      const imageBoard = createElement("div", "card__image-board card__image-board--banned");
-      imageBoard.style.backgroundImage = this.image;
+      const imageBoard = createElement(
+        "div",
+        "card__image-board card__image-board--banned"
+      );
+      imageBoard.style.background = `#d91a1ae3 ${this.image} center / cover`;
+      imageBoard.style.backgroundBlendMode = "hard-light";
+      // imageBoard.style.background = `linear-gradient(red 40%, yellow 30%, blue 65%),url("${this.image}`;
       const button = createElement("button", "card__menu-button", "ADD");
       button.type = "button";
       const description = createElement("div", "card__description");
@@ -80,7 +85,7 @@ function renderPints(datas) {
 
 function displayPints(start, end) {
   let leng = getPints().then((item) => {
-    datas = item.slice(start,end);
+    datas = item.slice(start, end);
     renderPints(datas);
   });
 }
@@ -98,7 +103,7 @@ function displayOneDesk(n) {
 let start = 20;
 let end = 30;
 function loadMore(step) {
-  displayPints(start,end);
+  displayPints(start, end);
   start = start + step;
   end = end + step;
 }

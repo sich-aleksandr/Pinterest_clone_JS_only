@@ -1,6 +1,6 @@
 function Toast(options) {
   this.init = function () {
-    this.root = document.querySelector('#toast');
+    this.root = document.querySelector("#toast");
     this.root.addEventListener("click", this.handleToast);
     this.start();
   };
