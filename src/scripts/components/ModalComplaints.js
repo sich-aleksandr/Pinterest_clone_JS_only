@@ -114,3 +114,4 @@ function ModalСomplaints() {
 const modalСomplaint = new ModalСomplaints();
 
 export { modalСomplaint };
+

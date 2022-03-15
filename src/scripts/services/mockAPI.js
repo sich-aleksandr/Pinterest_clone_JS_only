@@ -13,21 +13,21 @@ const MOCK_SERVICE = {
 
 const getPint = (id) => {
   return new Promise((resolve, reject) => {
-    return fetch(MOCK_SERVICE.getPint(id))
-      .then((response) => {
-        if (response.ok) {
-          const post = response.json();
-          resolve(post);
-        } else {
-          reject(console.log(`Pint not found`))
-        }
-  })
-})}
+    return fetch(MOCK_SERVICE.getPint(id)).then((response) => {
+      if (response.ok) {
+        const post = response.json();
+        resolve(post);
+      } else {
+        reject(console.log(`Pint not found`));
+      }
+    });
+  });
+};
 
 const getPints = () => {
   return fetch(MOCK_SERVICE.getPints())
     .then((response) => response.json())
     .then((data) => data);
-}
+};
 
-export { getPint, getPints }
+export { getPint, getPints };

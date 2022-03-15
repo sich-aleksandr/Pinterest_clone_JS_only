@@ -21,6 +21,6 @@ const deletedItems = {
   set: function (data) {
     localStorage.setItem(this.key, JSON.stringify(data));
   },
-}
+};
 
 export { localDataList, deletedItems };

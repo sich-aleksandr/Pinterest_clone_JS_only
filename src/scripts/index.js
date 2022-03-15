@@ -7,11 +7,10 @@ import { toast } from "./components/Toast.js";
 export { selectDesk } from "./components/Dropdown.js";
 export { menuHeader } from "./components/MenuHeader.js";
 
-
 document.addEventListener("DOMContentLoaded", app);
 
 function app() {
-  displayPints(0,20);
+  displayPints(0, 20);
   toast; // load toast on start of app
 
   document.querySelector("#load-more").addEventListener("click", () => {
@@ -24,7 +23,5 @@ function app() {
   selectDesk; // event for select
   modalСomplaint.init();
   modalAdd.init();
-  menuHeader
+  menuHeader;
 }
-
-

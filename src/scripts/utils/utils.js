@@ -18,5 +18,4 @@ function createElement(tag, className, text = "") {
   return element;
 }
 
-
 export { getUUID, trimText, createElement, getRandomInt };
