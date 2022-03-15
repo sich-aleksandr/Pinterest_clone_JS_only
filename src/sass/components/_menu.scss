@@ -1,42 +1,42 @@
 .menu.open {
-    opacity: 1;
-    z-index: 700;
+  opacity: 1;
+  z-index: 700;
 }
 
 .menu {
-    opacity: 0;
-    z-index: -1;
-    box-shadow: 2px 2px 2px rgb(216, 216, 216);
-    flex-direction: column;
-    border-radius: 20px;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 300px;
-    background-color: #ffffff;
-    &__header {
-        margin: 0px;
-        padding: 15px;
-        font-weight: 700;
-    }
-    &__list {
+  opacity: 0;
+  z-index: -1;
+  box-shadow: 2px 2px 2px rgb(216, 216, 216);
+  flex-direction: column;
+  border-radius: 20px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  background-color: #ffffff;
+  &__header {
+    margin: 0px;
+    padding: 15px;
+    font-weight: 700;
+  }
+  &__list {
     margin: 5px;
     padding: 0px;
     @include flex-c-c-s;
-    }
-    &__list li {
-        cursor: pointer;
-        list-style-type: none;
-        padding: 5px 10px 5px 10px;
-    }
-    &__list-link {
-        font-weight: 700;
-        display: block;
-        text-decoration: none;
-        color: black;
-    }
-    &__list li:hover {
-        border-radius: 10px;
-        background-color: rgb(216, 216, 216);
-    }
+  }
+  &__list li {
+    cursor: pointer;
+    list-style-type: none;
+    padding: 5px 10px 5px 10px;
+  }
+  &__list-link {
+    font-weight: 700;
+    display: block;
+    text-decoration: none;
+    color: black;
+  }
+  &__list li:hover {
+    border-radius: 10px;
+    background-color: rgb(216, 216, 216);
+  }
 }

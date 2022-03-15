@@ -30,3 +30,4 @@ function ToastCompleted(words) {
 const toastCompleted = new ToastCompleted();
 
 export { toastCompleted };
+

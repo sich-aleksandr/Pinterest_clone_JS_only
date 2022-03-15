@@ -97,17 +97,17 @@
     }
   }
   &__row {
-      margin: 10px 0;
+    margin: 10px 0;
 
     &-column {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
-    &-column>input {
-        margin-right: 10px;
+    &-column > input {
+      margin-right: 10px;
     }
-}
+  }
   &__footer-btns {
     display: flex;
     flex-direction: row;

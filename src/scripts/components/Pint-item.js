@@ -34,7 +34,6 @@ function Pint({ imageURL, avatarURL, description, id }) {
       );
       imageBoard.style.background = `#d91a1ae3 ${this.image} center / cover`;
       imageBoard.style.backgroundBlendMode = "hard-light";
-      // imageBoard.style.background = `linear-gradient(red 40%, yellow 30%, blue 65%),url("${this.image}`;
       const button = createElement("button", "card__menu-button", "ADD");
       button.type = "button";
       const description = createElement("div", "card__description");

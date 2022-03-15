@@ -3,8 +3,8 @@ import { displayOneDesk } from "./Pint-item.js";
 const selectDesk = document
   .querySelector("#desktop-select")
   .addEventListener("change", function () {
-    if (this.value === '333') {
-      document.location.href ="/";
+    if (this.value === "333") {
+      document.location.href = "/";
       return;
     } else {
       displayOneDesk(this.value);
@@ -15,8 +15,8 @@ const selectDesk = document
 const selectMobile = document
   .querySelector("#mobile-select")
   .addEventListener("change", function () {
-    if (this.value === '333') {
-      document.location.href ="/";
+    if (this.value === "333") {
+      document.location.href = "/";
       return;
     } else {
       displayOneDesk(this.value);

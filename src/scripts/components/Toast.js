@@ -32,3 +32,4 @@ function Toast(options) {
 const toast = new Toast().init();
 
 export { toast };
+
