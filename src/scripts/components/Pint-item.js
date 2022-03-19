@@ -65,7 +65,7 @@ function Pint({ imageURL, avatarURL, description, id }) {
     }
   };
 
-  this.handlePint = (event) => {
+  this.handlePint = ( event ) => {
     if (event.target.type === "button") {
       menu.open(event.clientX, event.clientY);
       pintId = this.id.slice(5);

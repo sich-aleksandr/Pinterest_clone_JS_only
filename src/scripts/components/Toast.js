@@ -16,8 +16,8 @@ function Toast(options) {
       }, 5000);
     });
   };
-  this.handleToast = (event) => {
-    if (event.target.type == "button") {
+  this.handleToast = ({ target }) => {
+    if (target.type == "button") {
       this.close();
     }
   };

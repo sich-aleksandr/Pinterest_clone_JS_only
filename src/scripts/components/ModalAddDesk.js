@@ -16,8 +16,8 @@ function modalAddDesk() {
     this.root.classList.add("open");
   };
 
-  this.handleModalAdd = (event) => {
-    if (event.target.type === "radio") {
+  this.handleModalAdd = ({ target }) => {
+    if (target.type === "radio") {
       this.add();
     } else {
       this.close();

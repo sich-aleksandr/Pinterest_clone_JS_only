@@ -17,8 +17,8 @@ function Menu(root) {
   this.close = function () {
       this.root.classList.remove('open');
   };
-  this.hendleMenu = (event) => {
-      if (event.target.type !== "button") {
+  this.hendleMenu = ({ target }) => {
+      if (target.type !== "button") {
           this.close();
         }
   }

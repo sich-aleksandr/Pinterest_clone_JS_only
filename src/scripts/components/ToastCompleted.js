@@ -6,8 +6,8 @@ function ToastCompleted(words) {
     this.root.addEventListener("click", this.handleToastCompleted);
   };
 
-  this.handleToastCompleted = (event) => {
-    if (event.target.type === "button") {
+  this.handleToastCompleted = ({ target }) => {
+    if (target.type === "button") {
       this.close();
     }
   };
