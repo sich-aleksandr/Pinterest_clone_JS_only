@@ -33,6 +33,7 @@ function Pint({ imageURL, avatarURL, description, id }) {
     const avatarImage = createElement("div", "card__avatar");
     const text = createElement("div", "card__text", this.description);
     const imageBoard = this.isBanned();
+    
     button.type = "button";
     pint.id = this.id;
     avatarImage.style.backgroundImage = this.avatar;
